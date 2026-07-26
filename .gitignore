@@ -1,0 +1,11 @@
+fix-it/
+├── .git/
+├── .gitignore          ← Create this
+│
+├── frontend/
+│   ├── node_modules/
+│   └── ...
+│
+└── backend/
+    ├── node_modules/
+    └── ...
