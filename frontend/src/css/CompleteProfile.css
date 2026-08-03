@@ -1,0 +1,215 @@
+.complete-profile-page {
+  min-height: calc(100vh - 70px);
+  background: #f7f7f7;
+  padding: 70px 0;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.brand-badge {
+  display: inline-block;
+  background: #ffc107;
+  color: #111;
+  font-weight: 800;
+  padding: 8px 18px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.profile-header h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #111;
+}
+
+.profile-header p {
+  font-size: 18px;
+  color: #666;
+}
+
+.role-selection,
+.profile-form {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.role-selection h3 {
+  font-weight: 700;
+  color: #111;
+}
+
+.role-card {
+  width: 100%;
+  min-height: 260px;
+  padding: 30px;
+  background: white;
+  border: 2px solid #eee;
+  border-radius: 18px;
+  text-align: left;
+  transition: 0.3s ease;
+}
+
+.role-card:hover {
+  border-color: #ffc107;
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.role-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffc107;
+  border-radius: 15px;
+  font-size: 28px;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.role-card h4 {
+  font-weight: 700;
+  color: #111;
+}
+
+.role-card p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.role-card span {
+  font-weight: 700;
+  color: #111;
+}
+
+.form-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.back-button {
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  color: #555;
+}
+
+.back-button:hover {
+  color: #111;
+}
+
+.role-label {
+  background: #ffc107;
+  color: #111;
+  padding: 7px 15px;
+  border-radius: 20px;
+  font-weight: 700;
+}
+
+.profile-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.profile-form .form-control {
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.profile-form .form-control:focus {
+  border-color: #ffc107;
+  box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.2);
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.section-title i {
+  color: #ffc107;
+  margin-right: 10px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.service-option {
+  padding: 13px;
+  background: white;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  font-weight: 600;
+  text-transform: capitalize;
+  transition: 0.2s ease;
+}
+
+.service-option:hover {
+  border-color: #ffc107;
+}
+
+.service-option.active {
+  background: #ffc107;
+  border-color: #ffc107;
+  color: #111;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.submit-button:hover {
+  background: #ffc107;
+  color: #111;
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+
+  .complete-profile-page {
+    padding: 40px 15px;
+  }
+
+  .profile-header h1 {
+    font-size: 32px;
+  }
+
+  .role-selection,
+  .profile-form {
+    padding: 25px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
