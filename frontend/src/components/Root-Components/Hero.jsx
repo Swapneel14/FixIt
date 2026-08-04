@@ -1,6 +1,7 @@
 import "../../css/Hero.css";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import HeroDashboard from "./Herodashboard";
 
 function Hero() {
   return (
@@ -102,75 +103,7 @@ function Hero() {
 
           <div className="col-lg-6">
 
-  <motion.div
-    className="hero-dashboard"
-    initial={{ opacity: 0, x: 60 }}
-    animate={{ opacity: 1, x: 0 }}
-    transition={{ duration: .8 }}
-  >
-
-    <div className="dashboard-header">
-      <div className="header-left">
-        <div className="dot red"></div>
-        <div className="dot yellow"></div>
-        <div className="dot green"></div>
-      </div>
-
-      <span>Fix It Dashboard</span>
-    </div>
-
-    <div className="service-card">
-      <div className="service-icon">🔧</div>
-
-      <div className="service-info">
-        <h5>Electrician</h5>
-        <p>Verified • 4.9 ★</p>
-      </div>
-
-      <span className="price">₹499</span>
-    </div>
-
-    <div className="service-card">
-      <div className="service-icon">🪠</div>
-
-      <div className="service-info">
-        <h5>Plumber</h5>
-        <p>Available in 20 mins</p>
-      </div>
-
-      <span className="price">₹349</span>
-    </div>
-
-    <div className="service-card">
-      <div className="service-icon">💻</div>
-
-      <div className="service-info">
-        <h5>Laptop Repair</h5>
-        <p>Certified Technician</p>
-      </div>
-
-      <span className="price">₹699</span>
-    </div>
-
-    <div className="quote-box">
-      <h4>3 Quotes Received</h4>
-
-      <div className="progress">
-        <div className="progress-fill"></div>
-      </div>
-
-      <span>Compare prices before booking</span>
-    </div>
-
-    <div className="floating-badge badge-1">
-      ⭐ 4.9 Rated
-    </div>
-
-    <div className="floating-badge badge-2">
-      ✔ 100% Verified
-    </div>
-
-  </motion.div>
+ <HeroDashboard/>
 
 </div>
 

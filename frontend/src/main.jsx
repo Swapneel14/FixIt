@@ -5,13 +5,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ClerkProvider } from "@clerk/clerk-react";
 
 import Navbar from "./components/Navbar";
-import App from "./App";
 import CompleteProfile from "./pages/CompleteProfile";
+import Root from "./pages/Root";
+
+import AuthGuard from "./guard/AuthGuard";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import AuthGuard from "./guard/AuthGuard";
-import Root from "./pages/Root.jsx";
 
 const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
@@ -21,21 +21,26 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <BrowserRouter>
 
         <Navbar />
-        <AuthGuard>
+
         <Routes>
 
+          {/* Public Route */}
           <Route
             path="/"
-            element={<Root/>}
+            element={<Root />}
           />
 
+          {/* Protected Route */}
           <Route
             path="/complete-profile"
-            element={<CompleteProfile />}
+            element={
+              <AuthGuard>
+                <CompleteProfile />
+              </AuthGuard>
+            }
           />
 
         </Routes>
-        </AuthGuard>
 
       </BrowserRouter>
     </ClerkProvider>
