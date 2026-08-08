@@ -1,0 +1,66 @@
+.provider-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:24px;
+
+    width:100%;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.provider-empty{
+
+    width:100%;
+
+    padding:70px 30px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.04);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+}
+
+.provider-empty h4{
+
+    color:#fff;
+
+    font-size:1.2rem;
+
+    margin-bottom:10px;
+}
+
+.provider-empty p{
+
+    color:#8f959f;
+
+    margin:0;
+
+    font-size:.9rem;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+    .provider-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
