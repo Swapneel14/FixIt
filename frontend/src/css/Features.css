@@ -1,0 +1,358 @@
+/* ===========================
+   FEATURES SECTION
+=========================== */
+
+.features-section{
+    position:relative;
+    padding:130px 0;
+    background:#0f1117;
+    overflow:hidden;
+}
+
+.features-section::before{
+    content:"";
+    position:absolute;
+    width:520px;
+    height:520px;
+    border-radius:50%;
+    background:rgba(255,208,0,.08);
+    filter:blur(130px);
+    top:-220px;
+    right:-180px;
+}
+
+.features-section::after{
+    content:"";
+    position:absolute;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    background:rgba(255,208,0,.05);
+    filter:blur(120px);
+    bottom:-180px;
+    left:-150px;
+}
+
+.features-section .container{
+    position:relative;
+    z-index:2;
+}
+
+/* ===========================
+   Heading
+=========================== */
+
+.features-heading{
+    text-align:center;
+    max-width:760px;
+    margin:0 auto 90px;
+}
+
+.feature-badge{
+    display:inline-block;
+    padding:10px 22px;
+    background:rgba(255,208,0,.12);
+    border:1px solid rgba(255,208,0,.25);
+    border-radius:50px;
+    color:#FFD000;
+    font-weight:600;
+    margin-bottom:22px;
+}
+
+.features-heading h2{
+    font-size:3rem;
+    color:#fff;
+    font-weight:800;
+    line-height:1.2;
+    margin-bottom:22px;
+}
+
+.features-heading h2 span{
+    color:#FFD000;
+}
+
+.features-heading p{
+    color:#bdbdbd;
+    line-height:1.8;
+    font-size:1.05rem;
+}
+
+/* ===========================
+   Timeline
+=========================== */
+
+.timeline{
+    position:relative;
+    max-width:1200px;
+    margin:auto;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:0;
+    transform:translateX(-50%);
+    width:4px;
+    height:100%;
+    background:linear-gradient(
+        to bottom,
+        transparent,
+        rgba(255,208,0,.6),
+        transparent
+    );
+}
+
+/* ===========================
+   Rows
+=========================== */
+
+.feature-row{
+    width:50%;
+    position:relative;
+    margin-bottom:80px;
+}
+
+.feature-row.left{
+    padding-right:70px;
+}
+
+.feature-row.right{
+    margin-left:50%;
+    padding-left:70px;
+}
+
+/* ===========================
+   Timeline Dot
+=========================== */
+
+.timeline-dot{
+    position:absolute;
+    width:22px;
+    height:22px;
+    background:#FFD000;
+    border-radius:50%;
+    top:55px;
+    box-shadow:
+        0 0 0 8px rgba(255,208,0,.12),
+        0 0 30px rgba(255,208,0,.55);
+    z-index:20;
+}
+
+.feature-row.left .timeline-dot{
+    right:-11px;
+}
+
+.feature-row.right .timeline-dot{
+    left:-11px;
+}
+
+/* ===========================
+   Feature Card
+=========================== */
+
+.feature-card{
+    position:relative;
+    overflow:hidden;
+
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:30px;
+
+    padding:35px;
+
+    transform-style:preserve-3d;
+
+    transition:
+        transform .35s,
+        border-color .35s,
+        box-shadow .35s;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.35),
+        inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+.feature-card:hover{
+    border-color:rgba(255,208,0,.35);
+
+    box-shadow:
+        0 35px 80px rgba(0,0,0,.45),
+        0 0 45px rgba(255,208,0,.12);
+}
+
+/* ===========================
+   Glow
+=========================== */
+
+.feature-glow{
+    position:absolute;
+    width:180px;
+    height:180px;
+    background:#FFD000;
+    opacity:.08;
+    border-radius:50%;
+    top:-80px;
+    right:-60px;
+    filter:blur(60px);
+    transition:.4s;
+}
+
+.feature-card:hover .feature-glow{
+    transform:scale(1.5);
+}
+
+/* ===========================
+   Top Area
+=========================== */
+
+.feature-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:28px;
+}
+
+.feature-number{
+    font-size:2.8rem;
+    font-weight:800;
+    color:rgba(255,255,255,.08);
+    user-select:none;
+}
+
+.feature-icon{
+    width:70px;
+    height:70px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:20px;
+
+    background:#FFD000;
+
+    color:#111;
+
+    font-size:28px;
+
+    transition:.35s;
+}
+
+.feature-card:hover .feature-icon{
+    transform:
+        rotate(-10deg)
+        scale(1.08);
+}
+
+/* ===========================
+   Text
+=========================== */
+
+.feature-card h3{
+    color:#fff;
+    margin-bottom:16px;
+    font-size:1.5rem;
+    font-weight:700;
+}
+
+.feature-card p{
+    color:#bdbdbd;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+/* ===========================
+   Button
+=========================== */
+
+.feature-btn{
+    border:none;
+    background:none;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    color:#FFD000;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.feature-btn:hover{
+    transform:translateX(8px);
+}
+
+/* ===========================
+   Shine
+=========================== */
+
+.feature-shine{
+    position:absolute;
+
+    top:-50%;
+
+    left:-120px;
+
+    width:80px;
+
+    height:220%;
+
+    background:rgba(255,255,255,.18);
+
+    transform:rotate(25deg);
+
+    transition:1s;
+}
+
+.feature-card:hover .feature-shine{
+    left:150%;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:992px){
+
+.timeline::before{
+    left:18px;
+}
+
+.feature-row{
+    width:100%;
+    margin-left:0;
+    padding-left:60px !important;
+    padding-right:0 !important;
+}
+
+.feature-row.right{
+    margin-left:0;
+}
+
+.timeline-dot{
+    left:7px !important;
+}
+
+.features-heading h2{
+    font-size:2.3rem;
+}
+
+.feature-card{
+    padding:28px;
+}
+
+.feature-number{
+    font-size:2.2rem;
+}
+
+.feature-icon{
+    width:60px;
+    height:60px;
+    font-size:24px;
+}
+
+}

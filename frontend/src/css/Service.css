@@ -1,0 +1,268 @@
+/* ===========================
+   SERVICES PAGE
+=========================== */
+
+.services-page{
+
+    min-height:100vh;
+
+    padding:120px 0 80px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(circle at 12% 12%, rgba(255,208,0,.08), transparent 30%),
+        radial-gradient(circle at 88% 82%, rgba(255,208,0,.05), transparent 35%),
+        linear-gradient(
+            180deg,
+            #060709 0%,
+            #0B0D12 30%,
+            #11151D 100%
+        );
+}
+
+/* ===========================
+   BACKGROUND GLOW
+=========================== */
+
+.services-page::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:520px;
+
+    height:520px;
+
+    background:#FFD000;
+
+    opacity:.05;
+
+    border-radius:50%;
+
+    filter:blur(180px);
+
+    top:-220px;
+
+    left:-180px;
+
+    pointer-events:none;
+}
+
+.services-page::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    background:#FFD000;
+
+    opacity:.04;
+
+    border-radius:50%;
+
+    filter:blur(170px);
+
+    bottom:-180px;
+
+    right:-140px;
+
+    pointer-events:none;
+}
+
+/* ===========================
+   CONTENT
+=========================== */
+
+.services-page .container{
+
+    position:relative;
+
+    z-index:2;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.services-header{
+
+    margin-bottom:40px;
+}
+
+.services-header h2{
+
+    color:#fff;
+
+    font-size:3rem;
+
+    font-weight:800;
+
+    margin-bottom:12px;
+
+    letter-spacing:-1px;
+}
+
+.services-header p{
+
+    color:#9CA3AF;
+
+    font-size:1.05rem;
+
+    max-width:620px;
+
+    line-height:1.7;
+}
+
+/* ===========================
+   FILTER BAR
+=========================== */
+
+.service-filter-wrapper{
+
+    margin-bottom:28px;
+}
+
+/* ===========================
+   RADIUS FILTER
+=========================== */
+
+.radius-filter{
+
+    width:100%;
+
+    margin-bottom:45px;
+}
+
+/* ===========================
+   PROVIDER SECTION
+=========================== */
+
+.providers-section{
+
+    margin-top:20px;
+}
+
+/* ===========================
+   SECTION TITLE
+=========================== */
+
+.providers-title{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+}
+
+.providers-title h3{
+
+    color:#fff;
+
+    font-size:1.7rem;
+
+    font-weight:700;
+
+    margin:0;
+}
+
+.providers-title span{
+
+    color:#FFD000;
+
+    font-weight:600;
+}
+
+/* ===========================
+   EMPTY STATE
+=========================== */
+
+.empty-state{
+
+    background:rgba(255,255,255,.04);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:70px 40px;
+
+    text-align:center;
+
+    color:#bdbdbd;
+}
+
+.empty-state h4{
+
+    color:white;
+
+    margin-bottom:12px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+.services-page{
+
+    padding:100px 0 60px;
+}
+
+.services-header{
+
+    text-align:center;
+}
+
+.services-header h2{
+
+    font-size:2.4rem;
+}
+
+.services-header p{
+
+    margin:auto;
+}
+
+.providers-title{
+
+    flex-direction:column;
+
+    gap:10px;
+
+    align-items:flex-start;
+}
+
+}
+
+@media(max-width:576px){
+
+.services-page{
+
+    padding:90px 0 50px;
+}
+
+.services-header h2{
+
+    font-size:2rem;
+}
+
+.services-header p{
+
+    font-size:.95rem;
+}
+
+}

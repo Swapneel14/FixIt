@@ -1,0 +1,168 @@
+.radius-filter{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:12px 16px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:16px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+    height:60px;
+
+    width:100%;
+}
+
+/* Left */
+
+.radius-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin:0;
+}
+
+.radius-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+.radius-icon{
+
+    color:#FFD000;
+
+    font-size:18px;
+}
+
+.radius-title h5{
+
+    margin:0;
+
+    color:white;
+
+    font-size:.9rem;
+
+    font-weight:600;
+}
+
+/* Hide subtitle */
+
+.radius-title p{
+
+    display:none;
+}
+
+/* Badge */
+
+.radius-value{
+
+    background:#FFD000;
+
+    color:#111;
+
+    padding:4px 10px;
+
+    border-radius:999px;
+
+    font-size:.8rem;
+
+    font-weight:700;
+
+    white-space:nowrap;
+}
+
+/* Slider */
+
+.slider-wrapper{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    flex:1;
+}
+
+.slider-wrapper span{
+
+    font-size:.75rem;
+
+    color:#999;
+
+    width:30px;
+
+    text-align:center;
+}
+
+.radius-slider{
+
+    flex:1;
+
+    appearance:none;
+
+    height:5px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.12);
+
+    outline:none;
+}
+
+.radius-slider::-webkit-slider-thumb{
+
+    appearance:none;
+
+    width:16px;
+
+    height:16px;
+
+    border-radius:50%;
+
+    background:#FFD000;
+
+    border:2px solid #111;
+
+    cursor:pointer;
+}
+
+.radius-slider::-moz-range-thumb{
+
+    width:16px;
+
+    height:16px;
+
+    border-radius:50%;
+
+    background:#FFD000;
+
+    border:none;
+}
+
+@media(max-width:992px){
+
+.radius-filter{
+
+    width:100%;
+}
+
+}

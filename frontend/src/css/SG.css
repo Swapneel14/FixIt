@@ -1,0 +1,320 @@
+/* ==========================
+   Service Categories
+========================== */
+
+.service-section{
+    position:relative;
+    padding:120px 0;
+    background:#0f1117;
+    overflow:hidden;
+}
+
+/* Background Glow */
+
+.service-section::before{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    border-radius:50%;
+    background:rgba(255,208,0,.12);
+    filter:blur(120px);
+    top:-180px;
+    left:-120px;
+}
+
+.service-section::after{
+    content:"";
+    position:absolute;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    background:rgba(255,208,0,.08);
+    filter:blur(120px);
+    bottom:-180px;
+    right:-100px;
+}
+
+.service-section .container{
+    position:relative;
+    z-index:2;
+}
+
+/* ==========================
+   Heading
+========================== */
+
+.section-heading{
+    text-align:center;
+    max-width:760px;
+    margin:0 auto 70px;
+}
+
+.section-badge{
+    display:inline-block;
+    padding:10px 22px;
+    border-radius:50px;
+    background:rgba(255,208,0,.12);
+    border:1px solid rgba(255,208,0,.3);
+    color:#FFD000;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.section-heading h2{
+    font-size:3rem;
+    font-weight:800;
+    color:white;
+    margin-bottom:20px;
+}
+
+.section-heading h2 span{
+    color:#FFD000;
+}
+
+.section-heading p{
+    color:#b8b8b8;
+    font-size:1.05rem;
+    line-height:1.8;
+}
+
+/* ==========================
+   Card
+========================== */
+
+.service-3d-card{
+
+    position:relative;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    padding:35px;
+
+    overflow:hidden;
+
+    transform-style:preserve-3d;
+
+    transition:
+    transform .35s,
+    box-shadow .35s,
+    border-color .35s;
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.05);
+
+    height:100%;
+}
+
+.service-3d-card:hover{
+
+    border-color:rgba(255,208,0,.35);
+
+    box-shadow:
+    0 40px 80px rgba(0,0,0,.45),
+    0 0 45px rgba(255,208,0,.18);
+}
+
+/* ==========================
+   Glow
+========================== */
+
+.service-glow{
+
+    position:absolute;
+
+    width:170px;
+
+    height:170px;
+
+    background:#FFD000;
+
+    opacity:.12;
+
+    border-radius:50%;
+
+    filter:blur(70px);
+
+    top:-70px;
+
+    right:-60px;
+
+    transition:.5s;
+}
+
+.service-3d-card:hover .service-glow{
+
+    transform:scale(1.35);
+}
+
+/* ==========================
+   Icon
+========================== */
+
+.icon-wrapper{
+
+    width:78px;
+
+    height:78px;
+
+    border-radius:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:34px;
+
+    color:#111;
+
+    margin-bottom:28px;
+
+    transform:translateZ(40px);
+
+    transition:.35s;
+}
+
+.service-3d-card:hover .icon-wrapper{
+
+    transform:
+    translateZ(60px)
+    rotate(-8deg)
+    scale(1.08);
+}
+
+/* ==========================
+   Typography
+========================== */
+
+.service-3d-card h3{
+
+    color:white;
+
+    font-size:1.45rem;
+
+    font-weight:700;
+
+    margin-bottom:12px;
+
+    transform:translateZ(30px);
+}
+
+.provider-count{
+
+    color:#bdbdbd;
+
+    margin-bottom:35px;
+
+    line-height:1.7;
+
+    transform:translateZ(22px);
+}
+
+/* ==========================
+   Footer
+========================== */
+
+.service-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    transform:translateZ(35px);
+}
+
+.rating{
+
+    color:#FFD000;
+
+    font-weight:700;
+
+    font-size:1rem;
+}
+
+.explore-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    border:none;
+
+    background:none;
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.explore-btn:hover{
+
+    color:#FFD000;
+}
+
+/* ==========================
+   Shine
+========================== */
+
+.card-shine{
+
+    position:absolute;
+
+    width:80px;
+
+    height:180%;
+
+    background:rgba(255,255,255,.18);
+
+    top:-40%;
+
+    left:-120px;
+
+    transform:rotate(25deg);
+
+    transition:1s;
+}
+
+.service-3d-card:hover .card-shine{
+
+    left:140%;
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:992px){
+
+.section-heading h2{
+
+    font-size:2.3rem;
+}
+
+.service-3d-card{
+
+    padding:28px;
+}
+
+.icon-wrapper{
+
+    width:70px;
+    height:70px;
+    font-size:30px;
+}
+
+}
