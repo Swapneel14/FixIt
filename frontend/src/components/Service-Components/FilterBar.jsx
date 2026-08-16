@@ -14,56 +14,67 @@ import {
 } from "react-icons/fa";
 
 const services = [
+
   {
     id: "all",
     name: "All Services",
     icon: FaThLarge,
   },
+
   {
-    id: "electrician",
+    id: "ELECTRICIAN",
     name: "Electrician",
     icon: FaBolt,
   },
+
   {
-    id: "plumber",
+    id: "PLUMBER",
     name: "Plumber",
     icon: FaFaucet,
   },
+
   {
-    id: "ac_repair",
+    id: "AC_REPAIR",
     name: "AC Repair",
     icon: FaSnowflake,
   },
+
   {
-    id: "laptop_repair",
+    id: "LAPTOP_REPAIR",
     name: "Laptop Repair",
     icon: FaLaptopCode,
   },
+
   {
-    id: "car_mechanic",
+    id: "CAR_MECHANIC",
     name: "Car Mechanic",
     icon: FaCarSide,
   },
+
   {
-    id: "painter",
+    id: "PAINTER",
     name: "Painter",
     icon: FaPaintRoller,
   },
+
   {
-    id: "home_cleaning",
+    id: "HOME_CLEANING",
     name: "Home Cleaning",
     icon: FaBroom,
   },
+
   {
-    id: "carpenter",
+    id: "CARPENTER",
     name: "Carpenter",
     icon: FaTools,
   },
+
   {
-    id: "furniture",
+    id: "FURNITURE",
     name: "Furniture",
     icon: FaCouch,
   },
+
 ];
 
 function ServiceFilterBar({
@@ -95,11 +106,10 @@ function ServiceFilterBar({
               onClick={() =>
                 setSelectedService(service.id)
               }
-              className={`service-chip ${
-                selectedService === service.id
+              className={`service-chip ${selectedService === service.id
                   ? "active"
                   : ""
-              }`}
+                }`}
             >
               <Icon />
 

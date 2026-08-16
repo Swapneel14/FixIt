@@ -6,6 +6,7 @@ import dns from "dns";
 
 import { clerkMiddleware , clerkClient} from "@clerk/express";
 import userRoutes from "./routes/userRoutes.js";
+import providerRoutes from "./routes/providerRouter.js"
 import errorHandler from "./middlewares/errorHandler.js";
 
 dotenv.config();
@@ -57,6 +58,12 @@ app.use(
   "/api/users",
   userRoutes
 );
+
+//Provider Routes
+app.use(
+  "/api/providers",
+  providerRoutes
+)
 app.use(errorHandler);
 
 // Connect DB and start server

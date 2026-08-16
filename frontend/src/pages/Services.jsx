@@ -4,7 +4,10 @@ import ServiceFilterBar from "../components/Service-Components/FilterBar";
 import RadiusFilter from "../components/Service-Components/RadiusFilter";
 import ProviderList from "../components/Service-Components/ProviderList";
 
+import { getNearbyProviders } from "../services/providerApi";
+
 import "../css/Service.css";
+import { useEffect } from "react";
 
 
 function Services() {
@@ -17,108 +20,119 @@ function Services() {
     // Temporary provider data
     // Later this will come from your backend
 
-    const [providers] = useState([
+    const [providers, setProviders] =
+        useState([]);
 
-        {
-            _id: "1",
+    const [loading, setLoading] =
+        useState(false);
 
-            name: "Raj Electronics",
+    const [error, setError] =
+        useState("");
 
-            profileImage: "",
+    const [location, setLocation] =
+        useState(null);
 
-            isVerified: true,
+    //Getting User's Current Location
 
-            rating: 4.9,
+    useEffect(() => {
 
-            bio: "Experienced electrician providing reliable electrical repair and installation services.",
-
-            experience: 6,
-
-            services: [
-                "ELECTRICIAN",
-                "AC_REPAIR"
-            ],
-
-            location: {
-                city: "Kolkata",
-                state: "West Bengal",
-
-                coordinates: [
-                    88.3639,
-                    22.5726
-                ]
-            },
-
-            distance: 2.4
-        },
-
-
-        {
-            _id: "2",
-
-            name: "Amit Home Services",
-
-            profileImage: "",
-
-            isVerified: true,
-
-            rating: 4.8,
-
-            bio: "Professional plumber with years of experience in residential plumbing services.",
-
-            experience: 5,
-
-            services: [
-                "PLUMBER"
-            ],
-
-            location: {
-                city: "Kolkata",
-                state: "West Bengal",
-
-                coordinates: [
-                    88.3700,
-                    22.5750
-                ]
-            },
-
-            distance: 3.7
-        },
-
-
-        {
-            _id: "3",
-
-            name: "TechFix Solutions",
-
-            profileImage: "",
-
-            isVerified: false,
-
-            rating: 4.6,
-
-            bio: "Laptop and computer repair specialist handling hardware and software issues.",
-
-            experience: 4,
-
-            services: [
-                "LAPTOP_REPAIR"
-            ],
-
-            location: {
-                city: "Kolkata",
-                state: "West Bengal",
-
-                coordinates: [
-                    88.3500,
-                    22.5600
-                ]
-            },
-
-            distance: 5.2
+        if (!navigator.geolocation) {
+            setError("Your Browser Doesnt Support Geolocation");
+            return;
         }
 
-    ]);
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+
+                setLocation({
+                    latitude,
+                    longitude
+                });
+
+                console.log(
+                    "User Location:",
+                    latitude,
+                    longitude
+                );
+
+
+            },
+
+            (error) => {
+
+                console.error(
+                    "Location Error:",
+                    error
+                );
+
+                setError(
+                    "Please allow location access to find nearby providers."
+                );
+
+            }
+        )
+
+    }, [])
+
+    //Fetch NearByProviders:-
+    useEffect(() => {
+
+        if (!location) {
+            return;
+        }
+
+        const fetchProvider = async () => {
+            try {
+                setLoading(true);
+                setError("");
+
+                const data = await getNearbyProviders({
+                    service: selectedService,
+                    radius: radius,
+                    latitude: location.latitude,
+                    longitude: location.longitude
+                });
+
+                console.log(
+                    "Nearby Providers:",
+                    data.providers
+                );
+
+
+                setProviders(
+                    data.providers || []
+                );
+
+            }
+            catch (error) {
+                console.error(
+                    "Provider Fetch Error:",
+                    error
+                );
+
+
+                setError(
+                    error.message ||
+                    "Failed to fetch nearby providers."
+                );
+
+
+                setProviders([]);
+            }
+
+            finally {
+
+                setLoading(false);
+
+            }
+        }
+         fetchProvider();
+
+    }, [ selectedService,
+        radius,
+        location])
 
 
     return (
