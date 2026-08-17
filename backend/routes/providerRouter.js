@@ -3,7 +3,8 @@ import express from "express";
 import { clerkMiddleware } from "@clerk/express";
 
 import {
-    getNearbyProviders
+    getNearbyProviders,
+    getProviderbyId
 } from "../controllers/providerController.js";
 
 
@@ -22,6 +23,12 @@ router.get(
     "/nearby",
     getNearbyProviders
 );
+
+//Get Single Provider from Id
+router.get(
+    "/:id",
+    getProviderbyId
+)
 
 
 export default router;

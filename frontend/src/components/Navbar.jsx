@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 import {
     SignInButton,
     SignUpButton,
@@ -6,21 +7,41 @@ import {
     UserButton,
 } from "@clerk/clerk-react";
 
+import { FaUserEdit } from "react-icons/fa";
+
 import "../css/Navbar.css";
 
+
 function Navbar() {
+
     const { isSignedIn } = useUser();
 
+    const navigate = useNavigate();
+
+
     return (
+
         <nav className="navbar navbar-expand-lg fixit-navbar sticky-top">
+
             <div className="container py-3">
 
-                {/* Logo */}
-                <Link to="/" className="navbar-brand fixit-logo">
+
+                {/* =========================
+                    LOGO
+                ========================= */}
+
+                <Link
+                    to="/"
+                    className="navbar-brand fixit-logo"
+                >
                     Fix<span>It</span>
                 </Link>
 
-                {/* Mobile Toggle */}
+
+                {/* =========================
+                    MOBILE TOGGLE
+                ========================= */}
+
                 <button
                     className="navbar-toggler border-0 shadow-none"
                     type="button"
@@ -30,70 +51,147 @@ function Navbar() {
                     aria-expanded="false"
                     aria-label="Toggle navigation"
                 >
+
                     <span className="navbar-toggler-icon"></span>
+
                 </button>
 
-                {/* Navbar Content */}
+
+                {/* =========================
+                    NAVBAR CONTENT
+                ========================= */}
+
                 <div
                     className="collapse navbar-collapse"
                     id="fixitNavbar"
                 >
 
-                    {/* Navigation Links */}
+
+                    {/* =========================
+                        NAVIGATION LINKS
+                    ========================= */}
+
                     <ul className="navbar-nav mx-auto align-items-lg-center gap-lg-2">
 
+
+                        {/* Services */}
+
                         <li className="nav-item">
+
                             <Link
                                 to="/services"
                                 className="nav-link fixit-nav-link"
                             >
                                 Services
                             </Link>
+
                         </li>
 
+
+                        {/* About */}
+
                         <li className="nav-item">
+
                             <Link
                                 to="/about"
                                 className="nav-link fixit-nav-link"
                             >
                                 About
                             </Link>
+
                         </li>
+
 
                     </ul>
 
-                    {/* Authentication */}
+
+                    {/* =========================
+                        AUTHENTICATION
+                    ========================= */}
+
                     <div className="d-flex align-items-center gap-3 mt-4 mt-lg-0">
+
 
                         {isSignedIn ? (
 
                             <UserButton
+
                                 appearance={{
                                     elements: {
-                                        avatarBox: "fixit-user-avatar",
+                                        avatarBox:
+                                            "fixit-user-avatar",
                                     },
                                 }}
-                            />
+
+                            >
+
+                                {/* =========================
+                                    CUSTOM CLERK MENU
+                                ========================= */}
+
+                                <UserButton.MenuItems>
+
+                                    <UserButton.Action
+
+                                        label="Edit Profile"
+
+                                        labelIcon={
+                                            <FaUserEdit />
+                                        }
+
+                                        onClick={() => {
+
+                                            navigate(
+                                                "/edit-profile"
+                                            );
+
+                                        }}
+
+                                    />
+
+                                </UserButton.MenuItems>
+
+                            </UserButton>
+
 
                         ) : (
 
                             <>
-                                {/* Existing User Login */}
+
+
+                                {/* =========================
+                                    LOGIN
+                                ========================= */}
+
                                 <SignInButton mode="modal">
-                                    <button className="btn fixit-signin-btn">
+
+                                    <button
+                                        className="btn fixit-signin-btn"
+                                    >
                                         Log In
                                     </button>
+
                                 </SignInButton>
 
-                                {/* New User Signup */}
+
+                                {/* =========================
+                                    SIGN UP
+                                ========================= */}
+
                                 <SignUpButton
                                     mode="modal"
-                                   fallbackRedirectUrl="/complete-profile"
+                                    fallbackRedirectUrl="/complete-profile"
                                 >
-                                    <button className="btn fixit-signup-btn">
+
+                                    <button
+                                        className="btn fixit-signup-btn"
+                                    >
                                         Get Started
                                     </button>
+
                                 </SignUpButton>
+
+
                             </>
 
                         )}
@@ -101,9 +199,14 @@ function Navbar() {
                     </div>
 
                 </div>
+
             </div>
+
         </nav>
+
     );
+
 }
+
 
 export default Navbar;

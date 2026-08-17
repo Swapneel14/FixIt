@@ -1,13 +1,13 @@
 import express from 'express';
 
 import { clerkMiddleware, requireAuth } from '@clerk/express';
-import { getCurrentUser , createUser } from '../controllers/userController.js';
+import { getCurrentUser , createUser, updateCurrentUser } from '../controllers/userController.js';
 
-import { createUserSchema } from '../validators/userValidator.js'; 
+import { createUserSchema, updateUserSchema } from '../validators/userValidator.js'; 
 import validate from '../middlewares/Validator.js';
 const router = express.Router();
 
-router.use(clerkMiddleware());
+
 
 
 //Get User
@@ -19,6 +19,13 @@ router.post(
     validate(createUserSchema),
     createUser
 );
+
+//Edit New User
+
+router.put("/me",
+    validate(updateUserSchema),
+    updateCurrentUser
+)
 
 
 

@@ -173,3 +173,54 @@ export const getNearbyProviders = async (req, res) => {
 
     }
 };
+
+//Get Single Provider for Profile Viewing
+
+export const getProviderbyId = async (req, res) => {
+    try {
+        const {id} = req.params;
+
+        // -----------------------------
+        // Find provider
+        // -----------------------------
+
+        const provider = await User.findOne({
+
+            _id: id,
+
+            roles: "PROVIDER",
+
+            accountStatus: "ACTIVE"
+
+        }).select(
+            "name email profileImage roles services location rating bio experience accountStatus"
+        );
+
+        if (!provider) {
+            return res.status(404).json({
+                success: false,
+                message: "Provider Not Found"
+            })
+        }
+
+        return res.status(200).json({
+            success: true,
+            provider
+        })
+    }
+    catch (error) {
+        console.error(
+            "Get provider by ID error:",
+            error
+        );
+
+
+        return res.status(500).json({
+
+            success: false,
+
+            message: "Failed to fetch provider"
+
+        });
+    }
+}
