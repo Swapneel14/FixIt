@@ -1,6 +1,7 @@
 import "../../css/ProviderCard.css";
 
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom"; 
 
 import {
   FaStar,
@@ -13,6 +14,7 @@ import {
 function ProviderCard({ provider }) {
 
   const services = provider.services || [];
+  const navigate = useNavigate();
 
   return (
 
@@ -227,7 +229,11 @@ function ProviderCard({ provider }) {
         </div>
 
 
-        <button className="provider-button">
+        <button className="provider-button" onClick={() =>
+          navigate(
+            `/providers/${provider._id}`
+          )
+        }>
 
           View Profile
 

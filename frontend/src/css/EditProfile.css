@@ -1,0 +1,1192 @@
+/* =========================================
+   PAGE
+========================================= */
+
+.edit-profile-page {
+
+    min-height: 100vh;
+
+    padding: 120px 0 80px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(255, 208, 0, .08),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(255, 208, 0, .05),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            180deg,
+            #07080A 0%,
+            #0D1015 50%,
+            #131720 100%
+        );
+
+}
+
+
+/* Background glow */
+
+.edit-profile-page::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+
+    height: 450px;
+
+    background: #FFD000;
+
+    opacity: .045;
+
+    border-radius: 50%;
+
+    filter: blur(150px);
+
+    top: -200px;
+
+    left: -150px;
+
+    pointer-events: none;
+
+}
+
+
+.edit-profile-page::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+
+    height: 400px;
+
+    background: #FFD000;
+
+    opacity: .035;
+
+    border-radius: 50%;
+
+    filter: blur(150px);
+
+    right: -150px;
+
+    bottom: -150px;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.edit-profile-heading {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+
+    margin: 0 auto 30px;
+
+}
+
+
+.heading-label {
+
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: #FFD000;
+
+    font-size: .75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.edit-profile-heading h1 {
+
+    margin: 0;
+
+    color: white;
+
+    font-size: 2.7rem;
+
+    font-weight: 800;
+
+    letter-spacing: -.5px;
+
+}
+
+
+.edit-profile-heading p {
+
+    margin-top: 10px;
+
+    margin-bottom: 0;
+
+    color: #999;
+
+    font-size: 1rem;
+
+}
+
+
+/* =========================================
+   MAIN CARD
+========================================= */
+
+.edit-profile-card {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 38px;
+
+    border-radius: 24px;
+
+    background:
+        rgba(255, 255, 255, .045);
+
+    border:
+        1px solid rgba(255, 255, 255, .08);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, .4);
+
+}
+
+
+/* =========================================
+   ALERTS
+========================================= */
+
+.profile-alert {
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 13px 16px;
+
+    margin-bottom: 25px;
+
+    border-radius: 12px;
+
+    font-size: .9rem;
+
+}
+
+
+.profile-alert.error {
+
+    color: #ff8585;
+
+    background:
+        rgba(255, 70, 70, .08);
+
+    border:
+        1px solid rgba(255, 70, 70, .2);
+
+}
+
+
+.profile-alert.success {
+
+    color: #6ee7a0;
+
+    background:
+        rgba(40, 200, 100, .08);
+
+    border:
+        1px solid rgba(40, 200, 100, .2);
+
+}
+
+
+/* =========================================
+   FORM SECTION
+========================================= */
+
+.form-section {
+
+    padding-bottom: 35px;
+
+    margin-bottom: 35px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, .07);
+
+}
+
+
+.form-section:last-of-type {
+
+    border-bottom: none;
+
+    margin-bottom: 0;
+
+    padding-bottom: 0;
+
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.section-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 28px;
+
+}
+
+
+.section-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 208, 0, .1);
+
+    color: #FFD000;
+
+    font-size: 18px;
+
+}
+
+
+.section-heading h3 {
+
+    margin: 0;
+
+    color: white;
+
+    font-size: 1.15rem;
+
+    font-weight: 700;
+
+}
+
+
+.section-heading p {
+
+    margin: 4px 0 0;
+
+    color: #888;
+
+    font-size: .85rem;
+
+}
+
+
+/* =========================================
+   FORM GROUP
+========================================= */
+
+.form-group {
+
+    margin-bottom: 23px;
+
+}
+
+
+.form-group:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #e5e5e5;
+
+    font-size: .9rem;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+.input-wrapper {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.input-wrapper > svg {
+
+    position: absolute;
+
+    left: 15px;
+
+    color: #777;
+
+    font-size: 15px;
+
+    pointer-events: none;
+
+}
+
+
+.input-wrapper input {
+
+    width: 100%;
+
+    height: 48px;
+
+    padding:
+        0 15px 0 44px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid rgba(255, 255, 255, .09);
+
+    outline: none;
+
+    background:
+        rgba(255, 255, 255, .045);
+
+    color: white;
+
+    font-size: .92rem;
+
+    transition: .25s;
+
+}
+
+
+.input-wrapper input::placeholder {
+
+    color: #666;
+
+}
+
+
+.input-wrapper input:focus {
+
+    border-color: #FFD000;
+
+    background:
+        rgba(255, 255, 255, .06);
+
+    box-shadow:
+        0 0 0 3px rgba(255, 208, 0, .08);
+
+}
+
+
+.input-suffix {
+
+    position: absolute;
+
+    right: 15px;
+
+    color: #777;
+
+    font-size: .85rem;
+
+}
+
+
+/* =========================================
+   TEXTAREA
+========================================= */
+
+.textarea-wrapper {
+
+    position: relative;
+
+}
+
+
+.textarea-wrapper > svg {
+
+    position: absolute;
+
+    top: 16px;
+
+    left: 15px;
+
+    color: #777;
+
+    font-size: 15px;
+
+}
+
+
+.textarea-wrapper textarea {
+
+    display: block;
+
+    width: 100%;
+
+    min-height: 130px;
+
+    padding:
+        14px 15px 14px 44px;
+
+    resize: vertical;
+
+    border-radius: 12px;
+
+    border:
+        1px solid rgba(255, 255, 255, .09);
+
+    outline: none;
+
+    background:
+        rgba(255, 255, 255, .045);
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: .92rem;
+
+    line-height: 1.6;
+
+    transition: .25s;
+
+}
+
+
+.textarea-wrapper textarea::placeholder {
+
+    color: #666;
+
+}
+
+
+.textarea-wrapper textarea:focus {
+
+    border-color: #FFD000;
+
+    background:
+        rgba(255, 255, 255, .06);
+
+    box-shadow:
+        0 0 0 3px rgba(255, 208, 0, .08);
+
+}
+
+
+.character-count {
+
+    text-align: right;
+
+    margin-top: 5px;
+
+    color: #666;
+
+    font-size: .75rem;
+
+}
+
+
+/* =========================================
+   SERVICES
+========================================= */
+
+.services-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+}
+
+
+.service-option {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+    min-height: 60px;
+
+    padding: 10px 14px;
+
+    border-radius: 13px;
+
+    border:
+        1px solid rgba(255, 255, 255, .08);
+
+    background:
+        rgba(255, 255, 255, .035);
+
+    color: #ddd;
+
+    font-family: inherit;
+
+    font-size: .88rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition:
+        transform .2s,
+        border-color .2s,
+        background .2s;
+
+}
+
+
+.service-option:hover {
+
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(255, 208, 0, .35);
+
+    background:
+        rgba(255, 208, 0, .04);
+
+}
+
+
+.service-option.selected {
+
+    border-color: #FFD000;
+
+    background:
+        rgba(255, 208, 0, .08);
+
+    color: white;
+
+}
+
+
+.service-option-icon {
+
+    width: 36px;
+
+    height: 36px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, .06);
+
+    color: #FFD000;
+
+}
+
+
+.service-option.selected
+.service-option-icon {
+
+    background: #FFD000;
+
+    color: #111;
+
+}
+
+
+.service-check {
+
+    margin-left: auto;
+
+    width: 20px;
+
+    height: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #111;
+
+    background: #FFD000;
+
+    font-size: .7rem;
+
+}
+
+
+/* =========================================
+   LOCATION
+========================================= */
+
+.location-box {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding: 20px;
+
+    margin-top: 10px;
+
+    border-radius: 16px;
+
+    border:
+        1px solid rgba(255, 208, 0, .15);
+
+    background:
+        rgba(255, 208, 0, .035);
+
+}
+
+
+.location-info {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+}
+
+
+.location-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    color: #FFD000;
+
+    background:
+        rgba(255, 208, 0, .1);
+
+    font-size: 18px;
+
+}
+
+
+.location-info h4 {
+
+    margin: 0;
+
+    color: white;
+
+    font-size: .95rem;
+
+    font-weight: 700;
+
+}
+
+
+.location-info p {
+
+    max-width: 470px;
+
+    margin: 5px 0 0;
+
+    color: #888;
+
+    font-size: .8rem;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================
+   LOCATION BUTTON
+========================================= */
+
+.location-btn {
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 44px;
+
+    padding: 10px 17px;
+
+    border: 1px solid
+        rgba(255, 208, 0, .3);
+
+    border-radius: 11px;
+
+    background:
+        rgba(255, 208, 0, .1);
+
+    color: #FFD000;
+
+    font-family: inherit;
+
+    font-size: .82rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+}
+
+
+.location-btn:hover {
+
+    background: #FFD000;
+
+    color: #111;
+
+    border-color: #FFD000;
+
+}
+
+
+.location-btn:disabled {
+
+    opacity: .6;
+
+    cursor: not-allowed;
+
+}
+
+
+/* =========================================
+   LOCATION STATUS
+========================================= */
+
+.location-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 12px;
+
+    color: #6ee7a0;
+
+    font-size: .8rem;
+
+}
+
+
+.location-status svg {
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.edit-profile-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    padding-top: 30px;
+
+    margin-top: 30px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, .07);
+
+}
+
+
+.edit-profile-actions button {
+
+    min-width: 130px;
+
+    height: 46px;
+
+    padding: 0 22px;
+
+    border-radius: 11px;
+
+    font-family: inherit;
+
+    font-size: .88rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+}
+
+
+/* Cancel */
+
+.cancel-btn {
+
+    border:
+        1px solid rgba(255, 255, 255, .12);
+
+    background:
+        rgba(255, 255, 255, .04);
+
+    color: #ccc;
+
+}
+
+
+.cancel-btn:hover {
+
+    background:
+        rgba(255, 255, 255, .09);
+
+    color: white;
+
+}
+
+
+/* Save */
+
+.save-btn {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    border: none;
+
+    background: #FFD000;
+
+    color: #111;
+
+}
+
+
+.save-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(255, 208, 0, .2);
+
+}
+
+
+.save-btn:disabled {
+
+    opacity: .6;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.edit-profile-loading {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+
+    min-height: 400px;
+
+    margin: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #999;
+
+}
+
+
+.loading-spinner {
+
+    width: 35px;
+
+    height: 35px;
+
+    margin-bottom: 15px;
+
+    border-radius: 50%;
+
+    border:
+        3px solid rgba(255, 255, 255, .1);
+
+    border-top-color: #FFD000;
+
+    animation:
+        editSpin .8s linear infinite;
+
+}
+
+
+.button-spinner {
+
+    width: 14px;
+
+    height: 14px;
+
+    border-radius: 50%;
+
+    border:
+        2px solid rgba(0, 0, 0, .25);
+
+    border-top-color: #111;
+
+    animation:
+        editSpin .7s linear infinite;
+
+}
+
+
+@keyframes editSpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .edit-profile-page {
+
+        padding:
+            100px 15px 60px;
+
+    }
+
+
+    .edit-profile-heading {
+
+        margin-bottom: 22px;
+
+    }
+
+
+    .edit-profile-heading h1 {
+
+        font-size: 2rem;
+
+    }
+
+
+    .edit-profile-card {
+
+        padding: 25px 20px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .section-heading {
+
+        align-items: flex-start;
+
+    }
+
+
+    .services-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .location-box {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .location-btn {
+
+        width: 100%;
+
+    }
+
+
+    .edit-profile-actions {
+
+        flex-direction: column-reverse;
+
+    }
+
+
+    .edit-profile-actions button {
+
+        width: 100%;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .edit-profile-heading h1 {
+
+        font-size: 1.75rem;
+
+    }
+
+
+    .edit-profile-card {
+
+        padding: 20px 16px;
+
+    }
+
+
+    .section-heading h3 {
+
+        font-size: 1rem;
+
+    }
+
+
+    .section-heading p {
+
+        font-size: .78rem;
+
+    }
+
+
+    .location-box {
+
+        padding: 16px;
+
+    }
+
+}

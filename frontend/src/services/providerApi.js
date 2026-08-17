@@ -26,3 +26,24 @@ export const getNearbyProviders = async({
 
     return data;
 }
+
+//Get Provider by Id
+
+export const getProviderbyId = async(id)=>{
+    const response = await fetch(
+        `${API_URL}/providers/${id}`
+    );
+
+    const data = response.json();
+    if (!response.ok) {
+
+        throw new Error(
+            data.message ||
+            "Failed to fetch provider"
+        );
+
+    }
+
+
+    return data;
+}

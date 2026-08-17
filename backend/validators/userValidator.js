@@ -8,6 +8,7 @@ const ServiceEnum = z.enum([
   "CAR_MECHANIC",
 ]);
 
+//Validate during Create Route
 export const createUserSchema = z.object(
     {
         name: z.string()
@@ -96,3 +97,60 @@ export const createUserSchema = z.object(
             }
         }
     })
+
+export const updateUserSchema = z.object({
+
+    name: z
+        .string()
+        .min(2, "Name must be at least 2 characters")
+        .max(100, "Name is too long")
+        .optional(),
+
+    profileImage: z
+        .string()
+        .optional(),
+
+    services: z
+        .array(
+            z.enum([
+                "AC_REPAIR",
+                "LAPTOP_REPAIR",
+                "PLUMBER",
+                "ELECTRICIAN",
+                "CAR_MECHANIC"
+            ])
+        )
+        .optional(),
+
+    location: z
+        .object({
+
+            type: z
+                .literal("Point"),
+
+            coordinates: z
+                .array(z.number())
+                .length(2),
+
+            city: z
+                .string()
+                .optional(),
+
+            state: z
+                .string()
+                .optional()
+
+        })
+        .optional(),
+
+    bio: z
+        .string()
+        .max(500, "Bio cannot exceed 500 characters")
+        .optional(),
+
+    experience: z
+        .number()
+        .min(0, "Experience cannot be negative")
+        .optional()
+
+});

@@ -129,4 +129,110 @@ console.log(req.auth);
     }
 }
 
+//Edit Current User:-
+ export const updateCurrentUser = async(req,res)=>{
+    try{
+       
+
+      const { userId } = getAuth(req);
+      const clerkId = userId;
+
+       if(!clerkId){
+        return res.status(401).json({
+            success:false,
+            message:"Unauthorized"
+        })
+       }
+
+       const clerkUser = await clerkClient.users.getUser(clerkId);
+       const email = clerkUser.emailAddresses[0]?.emailAddress;
+
+       if (!email) {
+            return res.status(400).json({
+                success: false,
+                message: "User email not found"
+            });
+        }
+
+       //fetching mongo User
+       const user = await User.findOne({
+            email: email.toLowerCase()
+        });
+       
+         if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: "User not found"
+            });
+        }
+
+         const {
+            name,
+            profileImage,
+            services,
+            location,
+            bio,
+            experience
+        } = req.body;
+
+        if (name !== undefined) {
+            user.name = name;
+        }
+
+
+        if (profileImage !== undefined) {
+            user.profileImage = profileImage;
+        }
+
+
+        if (services !== undefined) {
+            user.services = services;
+        }
+
+
+        if (location !== undefined) {
+            user.location = location;
+        }
+
+
+        if (bio !== undefined) {
+            user.bio = bio;
+        }
+
+
+        if (experience !== undefined) {
+            user.experience = experience;
+        }
+        
+        const updatedUser = await user.save();
+
+
+        return res.status(200).json({
+
+            success: true,
+
+            message: "Profile updated successfully",
+
+            user: updatedUser
+
+        });
+
+    }catch(err){
+
+        console.error(
+            "Update profile error:",
+            err
+        );
+
+        return res.status(500).json({
+
+            success: false,
+
+            message: "Failed to update profile"
+
+        });
+
+    }
+ }
+
 
