@@ -15,6 +15,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Services from "./pages/Services";
 import ProviderProfile from "./pages/ProviderProfile";
+import Chatbot from "./components/ChatBot/Chatbot";
 
 const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
@@ -72,6 +73,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           
 
         </Routes>
+
+        <Chatbot/>
 
       </BrowserRouter>
     </ClerkProvider>
