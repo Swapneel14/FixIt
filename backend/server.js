@@ -8,6 +8,7 @@ import { clerkMiddleware , clerkClient} from "@clerk/express";
 import userRoutes from "./routes/userRoutes.js";
 import providerRoutes from "./routes/providerRouter.js"
 import errorHandler from "./middlewares/errorHandler.js";
+import chatRoutes from "./routes/chatRoutes.js";
 
 dotenv.config();
 console.log("Secret:", process.env.CLERK_SECRET_KEY);
@@ -64,6 +65,12 @@ app.use(
   "/api/providers",
   providerRoutes
 )
+
+//Chat Route
+app.use(
+    "/api/chat",
+    chatRoutes
+);
 app.use(errorHandler);
 
 // Connect DB and start server
