@@ -1,311 +1,341 @@
-/* ========================================
-   FIXIT PREMIUM NAVBAR
-======================================== */
+/* =====================================================
+   FIXIT NAVBAR
+===================================================== */
 
 .fixit-navbar {
-  background: linear-gradient(
-    135deg,
-    #ffd60a 0%,
-    #ffc107 45%,
-    #f5a900 100%
-  );
 
-  box-shadow:
-    0 4px 20px rgba(83, 55, 0, 0.18);
+    background: rgba(10, 10, 10, 0.92);
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
-  z-index: 1000;
+    border-bottom: 1px solid rgba(255, 193, 7, 0.12);
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.25);
+
+    z-index: 1000;
 }
 
 
-/* ========================================
+/* =====================================================
    LOGO
-======================================== */
+===================================================== */
 
 .fixit-logo {
-  font-size: 2rem;
-  font-weight: 900;
-  letter-spacing: -1.5px;
 
-  color: #171717 !important;
+    font-size: 1.8rem;
 
-  transition: all 0.3s ease;
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    color: #ffffff !important;
+
+    text-decoration: none;
+
+    transition: 0.25s ease;
 }
 
 .fixit-logo span {
-  color: #5c3b00;
+
+    color: #ffc107;
 }
 
 .fixit-logo:hover {
-  transform: translateY(-2px);
+
+    transform: translateY(-1px);
+
+    color: #ffffff !important;
 }
 
 
-/* ========================================
-   NAVIGATION LINKS
-======================================== */
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 .fixit-nav-link {
-  position: relative;
 
-  color: #332400 !important;
+    display: flex;
 
-  font-family: "Inter", "Segoe UI", sans-serif;
+    align-items: center;
 
-  font-size: 1.15rem;
-  font-weight: 650;
+    gap: 7px;
 
-  letter-spacing: 0.4px;
+    position: relative;
 
-  padding: 0.7rem 1.25rem !important;
+    padding: 9px 15px !important;
 
-  border-radius: 12px;
+    border-radius: 10px;
 
-  transition:
-    color 0.3s ease,
-    background 0.3s ease,
-    transform 0.3s ease;
+    color: rgba(255, 255, 255, 0.72) !important;
+
+    font-size: 0.95rem;
+
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
 }
 
 
-/* Hover */
+.fixit-nav-link svg {
+
+    font-size: 14px;
+
+    color: #ffc107;
+
+    transition: transform 0.25s ease;
+}
+
 
 .fixit-nav-link:hover {
-  color: #111111 !important;
 
-  background: rgba(255, 255, 255, 0.25);
+    color: #ffffff !important;
 
-  transform: translateY(-2px);
+    background: rgba(255, 193, 7, 0.08);
+
+    transform: translateY(-1px);
 }
 
 
-/* Animated premium line */
+.fixit-nav-link:hover svg {
 
-.fixit-nav-link::after {
-  content: "";
-
-  position: absolute;
-
-  bottom: 5px;
-  left: 50%;
-
-  width: 0;
-  height: 2px;
-
-  background: #111111;
-
-  border-radius: 20px;
-
-  transform: translateX(-50%);
-
-  transition: width 0.3s ease;
-}
-
-.fixit-nav-link:hover::after {
-  width: 35%;
+    transform: scale(1.1);
 }
 
 
-/* ========================================
-   SIGN IN BUTTON
-======================================== */
+/* =====================================================
+   AUTH CONTAINER
+===================================================== */
+
+.fixit-navbar-auth {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.fixit-auth-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* =====================================================
+   LOGIN BUTTON
+===================================================== */
 
 .fixit-signin-btn {
-  color: #2b1b00 !important;
 
-  background: rgba(255, 255, 255, 0.25);
+    display: inline-flex;
 
-  border: 2px solid rgba(43, 27, 0, 0.7) !important;
+    align-items: center;
 
-  border-radius: 10px;
+    justify-content: center;
 
-  padding: 0.65rem 1.4rem;
+    min-width: 82px;
 
-  font-size: 0.95rem;
-  font-weight: 700;
+    height: 42px;
 
-  transition: all 0.3s ease;
+    padding: 0 18px;
+
+    border-radius: 10px;
+
+    background: transparent !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+
+    color: #ffffff !important;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: none !important;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
 }
+
 
 .fixit-signin-btn:hover {
-  color: #ffc107 !important;
 
-  background: #171717;
+    background: rgba(255, 255, 255, 0.08) !important;
 
-  border-color: #171717 !important;
+    border-color: rgba(255, 193, 7, 0.55) !important;
 
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 6px 15px rgba(0, 0, 0, 0.25);
+    color: #ffc107 !important;
 }
 
 
-/* ========================================
+/* =====================================================
    GET STARTED BUTTON
-======================================== */
+===================================================== */
 
 .fixit-signup-btn {
-  color: #ffc107 !important;
 
-  background: #171717;
+    display: inline-flex;
 
-  border: 2px solid #171717 !important;
+    align-items: center;
 
-  border-radius: 10px;
+    justify-content: center;
 
-  padding: 0.65rem 1.5rem;
+    min-width: 112px;
 
-  font-size: 0.95rem;
-  font-weight: 700;
+    height: 42px;
 
-  box-shadow:
-    0 5px 12px rgba(0, 0, 0, 0.2);
+    padding: 0 20px;
 
-  transition: all 0.3s ease;
+    border-radius: 10px;
+
+    background: #ffc107 !important;
+
+    border: 1px solid #ffc107 !important;
+
+    color: #111111 !important;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    font-size: 0.9rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 18px rgba(255, 193, 7, 0.18) !important;
+
+    transition:
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
 }
+
 
 .fixit-signup-btn:hover {
-  color: #171717 !important;
 
-  background: #fff3b0;
+    background: #ffd54f !important;
 
-  border-color: #fff3b0 !important;
+    border-color: #ffd54f !important;
 
-  transform: translateY(-3px);
+    color: #111111 !important;
 
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.25);
+    box-shadow:
+        0 8px 25px rgba(255, 193, 7, 0.3) !important;
 }
 
 
-/* ========================================
-   MOBILE TOGGLE
-======================================== */
+/* =====================================================
+   CLERK AVATAR
+===================================================== */
+
+.fixit-user-avatar {
+
+    width: 40px !important;
+
+    height: 40px !important;
+
+    border: 2px solid rgba(255, 193, 7, 0.7);
+
+    border-radius: 50%;
+
+    transition: 0.25s ease;
+}
+
+
+.fixit-user-avatar:hover {
+
+    border-color: #ffc107;
+
+    box-shadow:
+        0 0 0 4px rgba(255, 193, 7, 0.1);
+}
+
+
+/* =====================================================
+   MOBILE TOGGLER
+===================================================== */
 
 .navbar-toggler {
-  padding: 0.5rem;
 
-  border-radius: 8px !important;
+    padding: 7px 9px;
 
-  background: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 9px !important;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
-.navbar-toggler:focus {
-  box-shadow: none !important;
-}
 
-
-/* ========================================
-   MOBILE RESPONSIVENESS
-======================================== */
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media (max-width: 991px) {
 
-  .fixit-navbar .navbar-collapse {
-    margin-top: 1rem;
+    .fixit-navbar .container {
 
-    padding: 1rem;
-
-    background: rgba(255, 255, 255, 0.15);
-
-    border-radius: 15px;
-
-    backdrop-filter: blur(10px);
-  }
-
-  .fixit-nav-link {
-    text-align: center;
-
-    margin: 0.2rem 0;
-  }
-
-  .fixit-nav-link::after {
-    display: none;
-  }
-
-  .fixit-nav-link:hover {
-    background: rgba(255, 255, 255, 0.3);
-  }
-
-  .fixit-navbar .d-flex {
-    justify-content: center;
-  }
-
-}
-
-/* ========================================
-   PROFILE IMAGE
-======================================== */
-
-.fixit-profile-image {
-  width: 42px;
-  height: 42px;
-
-  object-fit: cover;
-
-  border-radius: 50%;
-
-  border: 3px solid #171717;
-
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-
-  transition: all 0.3s ease;
-}
-
-.fixit-profile-image:hover {
-  transform: scale(1.08);
-
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+    }
 
 
-/* ========================================
-   PROFILE BUTTON
-======================================== */
+    .navbar-collapse {
 
-.fixit-profile-btn {
-  color: #171717 !important;
+        padding-top: 18px;
+    }
 
-  background: rgba(255, 255, 255, 0.25);
 
-  border: 2px solid #171717 !important;
+    .fixit-nav-link {
 
-  border-radius: 10px;
+        width: fit-content;
 
-  padding: 0.6rem 1.3rem;
+        margin-bottom: 4px;
+    }
 
-  font-size: 0.95rem;
 
-  font-weight: 700;
+    .fixit-navbar-auth {
 
-  transition: all 0.3s ease;
-}
+        justify-content: flex-start;
 
-.fixit-profile-btn:hover {
-  color: #ffc107 !important;
+        margin-top: 15px;
+    }
 
-  background: #171717;
 
-  transform: translateY(-2px);
+    .fixit-auth-buttons {
 
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-}
+        width: 100%;
+    }
 
-.fixit-user-avatar {
-  width: 48px !important;
-  height: 48px !important;
 
-  border: 3px solid #171717;
+    .fixit-signin-btn,
+    .fixit-signup-btn {
 
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        flex: 1;
+    }
 
-  transition: all 0.3s ease;
-}
-
-.fixit-user-avatar:hover {
-  transform: scale(1.08);
-
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 }

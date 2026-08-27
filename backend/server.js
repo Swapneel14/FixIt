@@ -9,6 +9,8 @@ import userRoutes from "./routes/userRoutes.js";
 import providerRoutes from "./routes/providerRouter.js"
 import errorHandler from "./middlewares/errorHandler.js";
 import chatRoutes from "./routes/chatRoutes.js";
+import serviceRequestRoutes from "./routes/serviceRoutes.js"
+  
 
 dotenv.config();
 console.log("Secret:", process.env.CLERK_SECRET_KEY);
@@ -71,7 +73,16 @@ app.use(
     "/api/chat",
     chatRoutes
 );
+
+//Service Request Routes:-
+app.use("/api/service-requests",
+serviceRequestRoutes
+)
+
+
 app.use(errorHandler);
+
+
 
 // Connect DB and start server
 const startServer = async () => {

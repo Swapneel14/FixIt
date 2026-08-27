@@ -34,7 +34,7 @@ export const getProviderbyId = async(id)=>{
         `${API_URL}/providers/${id}`
     );
 
-    const data = response.json();
+    const data = await response.json();
     if (!response.ok) {
 
         throw new Error(
