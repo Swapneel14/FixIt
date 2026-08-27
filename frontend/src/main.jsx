@@ -16,6 +16,8 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Services from "./pages/Services";
 import ProviderProfile from "./pages/ProviderProfile";
 import Chatbot from "./components/ChatBot/Chatbot";
+import ServiceRequest from "./pages/ServiceRequest";
+import MyBookings from "./pages/MyBookings";
 
 const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
@@ -48,16 +50,16 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             path="/services"
             element={
               <AuthGuard>
-               <Services/>
+                <Services />
               </AuthGuard>
             }
           />
 
-           <Route
+          <Route
             path="/edit-profile"
             element={
               <AuthGuard>
-               <EditProfile/>
+                <EditProfile />
               </AuthGuard>
             }
           />
@@ -66,15 +68,31 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             path="/providers/:id"
             element={
               <AuthGuard>
-               <ProviderProfile/>
+                <ProviderProfile />
               </AuthGuard>
             }
           />
-          
+
+          <Route
+            path="/service-request/:providerId"
+            element={
+            <AuthGuard>
+            <ServiceRequest />
+            </AuthGuard>}
+          />
+
+          <Route
+                    path="/my-bookings"
+                    element={
+                     <AuthGuard>
+                    <MyBookings />
+                    </AuthGuard>}
+                />
+
 
         </Routes>
 
-        <Chatbot/>
+        <Chatbot />
 
       </BrowserRouter>
     </ClerkProvider>

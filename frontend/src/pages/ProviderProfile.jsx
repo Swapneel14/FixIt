@@ -271,15 +271,15 @@ function ProviderProfile() {
                             {provider.accountStatus ===
                                 "ACTIVE" && (
 
-                                <span className="provider-profile-verified">
+                                    <span className="provider-profile-verified">
 
-                                    <FaCheck />
+                                        <FaCheck />
 
-                                    Verified
+                                        Verified
 
-                                </span>
+                                    </span>
 
-                            )}
+                                )}
 
                         </div>
 
@@ -344,18 +344,11 @@ function ProviderProfile() {
                                 scale: 0.97
                             }}
 
-                            onClick={() => {
-
-                                console.log(
-                                    "Book provider:",
-                                    provider._id
-                                );
-
-                                // Service request
-                                // functionality will be
-                                // connected here later.
-
-                            }}
+                            onClick={() =>
+                                navigate(
+                                    `/service-request/${provider._id}`
+                                )
+                            }
                         >
 
                             <FaCalendarCheck />

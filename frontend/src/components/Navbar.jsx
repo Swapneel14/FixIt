@@ -7,7 +7,13 @@ import {
     UserButton,
 } from "@clerk/clerk-react";
 
-import { FaUserEdit } from "react-icons/fa";
+import {
+    FaUserEdit,
+    FaCalendarCheck,
+    FaTools,
+} from "react-icons/fa";
+
+import { motion } from "framer-motion";
 
 import "../css/Navbar.css";
 
@@ -68,13 +74,13 @@ function Navbar() {
 
 
                     {/* =========================
-                        NAVIGATION LINKS
+                        NAVIGATION
                     ========================= */}
 
-                    <ul className="navbar-nav mx-auto align-items-lg-center gap-lg-2">
+                    <ul className="navbar-nav mx-auto align-items-lg-center gap-lg-3">
 
 
-                        {/* Services */}
+                        {/* SERVICES */}
 
                         <li className="nav-item">
 
@@ -82,13 +88,38 @@ function Navbar() {
                                 to="/services"
                                 className="nav-link fixit-nav-link"
                             >
-                                Services
+                                <FaTools />
+                                <span>Services</span>
                             </Link>
 
                         </li>
 
 
-                        {/* About */}
+                        {/* MY BOOKINGS */}
+
+                        {isSignedIn && (
+
+                            <li className="nav-item">
+
+                                <Link
+                                    to="/my-bookings"
+                                    className="nav-link fixit-nav-link"
+                                >
+
+                                    <FaCalendarCheck />
+
+                                    <span>
+                                        My Bookings
+                                    </span>
+
+                                </Link>
+
+                            </li>
+
+                        )}
+
+
+                        {/* ABOUT */}
 
                         <li className="nav-item">
 
@@ -96,20 +127,19 @@ function Navbar() {
                                 to="/about"
                                 className="nav-link fixit-nav-link"
                             >
-                                About
+                                <span>About</span>
                             </Link>
 
                         </li>
-
 
                     </ul>
 
 
                     {/* =========================
-                        AUTHENTICATION
+                        AUTH
                     ========================= */}
 
-                    <div className="d-flex align-items-center gap-3 mt-4 mt-lg-0">
+                    <div className="fixit-navbar-auth">
 
 
                         {isSignedIn ? (
@@ -124,10 +154,6 @@ function Navbar() {
                                 }}
 
                             >
-
-                                {/* =========================
-                                    CUSTOM CLERK MENU
-                                ========================= */}
 
                                 <UserButton.MenuItems>
 
@@ -153,46 +179,55 @@ function Navbar() {
 
                             </UserButton>
 
-
                         ) : (
 
-                            <>
+                            <div className="fixit-auth-buttons">
 
 
-                                {/* =========================
-                                    LOGIN
-                                ========================= */}
+                                {/* LOGIN */}
 
                                 <SignInButton mode="modal">
 
-                                    <button
-                                        className="btn fixit-signin-btn"
+                                    <motion.button
+                                        type="button"
+                                        className="fixit-signin-btn"
+                                        whileHover={{
+                                            y: -2,
+                                        }}
+                                        whileTap={{
+                                            scale: 0.97,
+                                        }}
                                     >
                                         Log In
-                                    </button>
+                                    </motion.button>
 
                                 </SignInButton>
 
 
-                                {/* =========================
-                                    SIGN UP
-                                ========================= */}
+                                {/* SIGN UP */}
 
                                 <SignUpButton
                                     mode="modal"
                                     fallbackRedirectUrl="/complete-profile"
                                 >
 
-                                    <button
-                                        className="btn fixit-signup-btn"
+                                    <motion.button
+                                        type="button"
+                                        className="fixit-signup-btn"
+                                        whileHover={{
+                                            y: -2,
+                                        }}
+                                        whileTap={{
+                                            scale: 0.97,
+                                        }}
                                     >
                                         Get Started
-                                    </button>
+                                    </motion.button>
 
                                 </SignUpButton>
 
 
-                            </>
+                            </div>
 
                         )}
 
