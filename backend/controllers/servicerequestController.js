@@ -1,6 +1,7 @@
 import User from "../models/User.js";
 import ServiceRequest from "../models/ServiceRequest.js";
 import { clerkClient } from '@clerk/express';
+import emailQueue from "../queues/emailQueue.js";
 
 //Get All Bookings
 
@@ -72,7 +73,7 @@ export const getMyBookings = async (req, res) => {
         });
     }
     catch (error) {
-         console.error(
+        console.error(
             "Get my bookings error:",
             error
         );
@@ -160,6 +161,56 @@ export const createServiceRequest = async (req, res) => {
 
             status: "PENDING"
         })
+
+     
+
+        const customer = await User.findById(customerId);
+        await emailQueue.add(
+    "booking-created-provider",
+    {
+        to: provider.email,
+
+        subject: "New Service Request - FixIt",
+
+        message: `
+            You have received a new service request.
+
+            Service: ${service}
+
+            Issue:
+            ${issueDescription}
+
+            Preferred Date: ${preferredDate}
+
+            Preferred Time: ${preferredTime}
+        `
+    }
+);
+
+
+await emailQueue.add(
+    "booking-created-customer",
+    {
+        to: customer.email,
+
+        subject: "Booking Confirmed - FixIt",
+
+        message: `
+            Your service request has been successfully created.
+
+            Service: ${service}
+
+            Issue:
+            ${issueDescription}
+
+            Preferred Date: ${preferredDate}
+
+            Preferred Time: ${preferredTime}
+
+            Status: PENDING
+        `
+    }
+);
 
         return res.status(201).json({
 
